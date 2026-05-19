@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #c7cacd;
+    }
+
+    h2 {
+      text-align: center;
+      padding: 20px;
+      color: #333;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h2>Image Gallery</h2>
+  <div class="gallery">
+    <img src="https://via.placeholder.com/400x250" alt="Gallery Image 1">
+    <img src="https://via.placeholder.com/400x250" alt="Gallery Image 2">
+    <img src="https://via.placeholder.com/400x250" alt="Gallery Image 3">
+    <img src="https://via.placeholder.com/400x250" alt="Gallery Image 4">
+    <img src="https://via.placeholder.com/400x250" alt="Gallery Image 5">
+    <img src="https://via.placeholder.com/400x250" alt="Gallery Image 6">
+    <img src="https:?// vaia placeholder.com/400x250"alt=" Gallery image 7 ">
+    <img src="https:?// vaia placeholder.com/400x250"alt=" Gallery image 8 ">
+    <img src="https:?// vaia placeholder.com/400x250"alt=" Gallery image 9 ">
+    <img src="https:?// vaia placeholder.com/400x250"alt=" Gallery image 10 ">
+</body>
+</html>

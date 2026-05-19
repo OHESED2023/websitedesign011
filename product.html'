@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Products</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Our Products</h1>
+  </header>
+
+  <section class="product-container">
+    <div class="product-card">
+      <img src="images/car1.jpg" alt="Car Model 1">
+      <h2>Car Model 1</h2>
+      <p>Luxury and comfort with top-notch performance.</p>
+      <span class="price">$25,000</span>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="images/car2.jpg" alt="Car Model 2">
+      <h2>Car Model 2</h2>
+      <p>Affordable, reliable, and fuel efficient.</p>
+      <span class="price">$18,000</span>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="images/car3.jpg" alt="Car Model 3">
+      <h2>Car Model 3</h2>
+      <p>Perfect for family and long trips.</p>
+      <span class="price">$30,000</span>
+      <button>Add to Cart</button>
+    </div>
+  </section>
+</body>
+</html>
