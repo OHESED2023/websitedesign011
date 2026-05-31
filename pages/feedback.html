@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback — AutoDrive Motors</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .feedback-wrapper {
+      max-width: 580px;
+      margin: 0 auto;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 44px;
+    }
+
+    .feedback-wrapper h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .feedback-wrapper > p {
+      color: var(--color-muted);
+      font-size: 0.92rem;
+      margin-bottom: 30px;
+    }
+
+    /* Star Rating */
+    .star-group {
+      margin-bottom: 24px;
+    }
+
+    .star-group label:first-child {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--color-muted);
+      margin-bottom: 10px;
+    }
+
+    .stars {
+      display: flex;
+      gap: 8px;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+    }
+
+    .stars input { display: none; }
+
+    .stars label {
+      font-size: 2rem;
+      color: var(--color-border);
+      cursor: pointer;
+      transition: color var(--transition), transform var(--transition);
+    }
+
+    .stars input:checked ~ label,
+    .stars label:hover,
+    .stars label:hover ~ label {
+      color: var(--color-accent);
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 560px) {
+      .feedback-wrapper { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="../index.html" class="navbar__brand">AUTO<span>DRIVE</span></a>
+    <div class="navbar__toggle"><span></span><span></span><span></span></div>
+    <div class="navbar__links">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="payment-schemes.html">Payment Schemes</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html" class="active">Feedback</a>
+      <a href="account.html" class="navbar__cta">My Account</a>
+      <a href="book-appointment.html" class="btn btn--primary" style="width:auto;padding:8px 16px;">Book Now</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <p class="page-hero__label">Share Your Experience</p>
+    <h1 class="page-hero__title">FEEDBACK</h1>
+    <p class="page-hero__sub">Your opinion helps us serve you better.</p>
+  </div>
+
+  <div class="main-content">
+    <div class="feedback-wrapper">
+      <h2>RATE YOUR EXPERIENCE</h2>
+      <p>We value every piece of feedback. Tell us how we're doing.</p>
+
+      <form>
+        <div class="form-group">
+          <label for="fb-name">Full Name</label>
+          <input type="text" id="fb-name" placeholder="Your name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="fb-email">Email Address</label>
+          <input type="email" id="fb-email" placeholder="your@email.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="fb-vehicle">Vehicle Purchased / Viewed</label>
+          <select id="fb-vehicle">
+            <option value="">— Select vehicle (optional) —</option>
+            <option>Sedan</option>
+            <option>SUV</option>
+            <option>Sports Car</option>
+            <option>Truck</option>
+            <option>Electric Car</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <!-- Star rating -->
+        <div class="star-group">
+          <label>Overall Rating</label>
+          <div class="stars">
+            <input type="radio" name="rating" id="s5" value="5"><label for="s5">★</label>
+            <input type="radio" name="rating" id="s4" value="4"><label for="s4">★</label>
+            <input type="radio" name="rating" id="s3" value="3"><label for="s3">★</label>
+            <input type="radio" name="rating" id="s2" value="2"><label for="s2">★</label>
+            <input type="radio" name="rating" id="s1" value="1"><label for="s1">★</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="fb-message">Your Feedback</label>
+          <textarea id="fb-message" rows="5" placeholder="Tell us about your experience..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary">Submit Feedback</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer__brand">AUTO<span style="color:var(--color-text)">DRIVE</span></div>
+    <div class="footer__links">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="payment-schemes.html">Payment Schemes</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="book-appointment.html">Book Appointment</a>
+      <a href="account.html">Account</a>
+    </div>
+    <p class="footer__copy">&copy; 2026 AutoDrive Motors. All rights reserved. Template by Favex.</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

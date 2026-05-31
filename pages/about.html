@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — AutoDrive Motors</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    .about-grid__img {
+      border-radius: var(--radius-lg);
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border: 1px solid var(--color-border);
+    }
+
+    .about-grid__text h2 {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .about-grid__text h2 em {
+      font-style: normal;
+      color: var(--color-accent);
+    }
+
+    .about-grid__text p {
+      color: var(--color-muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    /* Values */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 60px;
+    }
+
+    .value-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 28px 22px;
+      text-align: center;
+      transition: transform var(--transition);
+    }
+
+    .value-card:hover { transform: translateY(-4px); }
+
+    .value-card__icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+
+    .value-card__title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      color: var(--color-accent);
+    }
+
+    .value-card__text {
+      font-size: 0.88rem;
+      color: var(--color-muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="../index.html" class="navbar__brand">AUTO<span>DRIVE</span></a>
+    <div class="navbar__toggle"><span></span><span></span><span></span></div>
+    <div class="navbar__links">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="payment-schemes.html">Payment Schemes</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="account.html" class="navbar__cta">My Account</a>
+      <a href="book-appointment.html" class="btn btn--primary" style="width:auto;padding:8px 16px;">Book Now</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <p class="page-hero__label">Our Story</p>
+    <h1 class="page-hero__title">ABOUT US</h1>
+    <p class="page-hero__sub">Passion for cars. Commitment to people.</p>
+  </div>
+
+  <div class="main-content">
+    <div class="about-grid">
+      <img
+        class="about-grid__img"
+        src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=80"
+        alt="Our Showroom"
+      />
+      <div class="about-grid__text">
+        <h2>WE ARE <em>AUTODRIVE</em></h2>
+        <p>Welcome to AutoDrive Motors — a team of passionate automotive professionals dedicated to delivering premium vehicles and exceptional service. Our mission is simple: connect the right driver with the right car, at the right price.</p>
+        <p>With over 15 years of experience in the industry, we've built lasting relationships with thousands of customers across the country. We believe buying a car should be exciting, transparent, and stress-free.</p>
+        <p>From test drives to after-sale support, we're with you at every step of the journey.</p>
+        <a href="book-appointment.html" class="btn btn--primary" style="width:auto;padding:12px 30px;margin-top:10px;">Book a Visit</a>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-heading">
+      <p class="section-heading__label">What We Stand For</p>
+      <h2 class="section-heading__title">OUR VALUES</h2>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-card__icon">🏆</div>
+        <div class="value-card__title">EXCELLENCE</div>
+        <p class="value-card__text">We hold ourselves to the highest standards in every vehicle we sell and every customer we serve.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-card__icon">🤝</div>
+        <div class="value-card__title">INTEGRITY</div>
+        <p class="value-card__text">Transparent pricing, honest advice, no surprises. We build trust, not just transactions.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-card__icon">⚡</div>
+        <div class="value-card__title">INNOVATION</div>
+        <p class="value-card__text">From electric vehicles to digital booking, we embrace the future of automotive retail.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-card__icon">❤️</div>
+        <div class="value-card__title">COMMUNITY</div>
+        <p class="value-card__text">We give back. A portion of every sale supports local infrastructure and road safety campaigns.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer__brand">AUTO<span style="color:var(--color-text)">DRIVE</span></div>
+    <div class="footer__links">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="payment-schemes.html">Payment Schemes</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="book-appointment.html">Book Appointment</a>
+      <a href="account.html">Account</a>
+    </div>
+    <p class="footer__copy">&copy; 2026 AutoDrive Motors. All rights reserved. Template by Favex.</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

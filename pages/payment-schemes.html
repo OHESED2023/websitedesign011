@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Schemes — AutoDrive Motors</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .plan-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .plan-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-card), var(--shadow-glow);
+    }
+
+    .plan-card--featured {
+      border-color: var(--color-accent);
+      position: relative;
+    }
+
+    .plan-card--featured::before {
+      content: 'MOST POPULAR';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      background: var(--color-accent);
+      color: #0d0d0d;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-align: center;
+      padding: 6px;
+    }
+
+    .plan-card__img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .plan-card--featured .plan-card__img {
+      margin-top: 30px; /* offset featured label */
+    }
+
+    .plan-card__body {
+      padding: 22px;
+    }
+
+    .plan-card__type {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      color: var(--color-text);
+      margin-bottom: 4px;
+    }
+
+    .plan-card__price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin: 14px 0;
+    }
+
+    .plan-card__features {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .plan-card__features li {
+      padding: 7px 0;
+      border-bottom: 1px solid var(--color-border);
+      color: var(--color-muted);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .plan-card__features li::before {
+      content: '✓';
+      color: var(--color-accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .plan-card__features li:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="../index.html" class="navbar__brand">AUTO<span>DRIVE</span></a>
+    <div class="navbar__toggle"><span></span><span></span><span></span></div>
+    <div class="navbar__links">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="payment-schemes.html" class="active">Payment Schemes</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="account.html" class="navbar__cta">My Account</a>
+      <a href="book-appointment.html" class="btn btn--primary" style="width:auto;padding:8px 16px;">Book Now</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <p class="page-hero__label">Flexible Finance</p>
+    <h1 class="page-hero__title">PAYMENT SCHEMES</h1>
+    <p class="page-hero__sub">Drive now, pay flexibly. Tailored installment plans for every budget.</p>
+  </div>
+
+  <div class="main-content">
+    <div class="grid-3">
+
+      <div class="plan-card">
+        <img class="plan-card__img" src="https://images.unsplash.com/photo-1618907795291-22fb5a33f9c2?auto=format&fit=crop&w=800&q=80" alt="Sedan">
+        <div class="plan-card__body">
+          <div class="plan-card__type">SEDAN</div>
+          <div class="plan-card__price">₦25,000,000</div>
+          <ul class="plan-card__features">
+            <li>36 Monthly Installments</li>
+            <li>2-Year Warranty</li>
+            <li>Free Maintenance — 1 Year</li>
+          </ul>
+          <a href="book-appointment.html" class="btn btn--outline">Choose Sedan Plan</a>
+        </div>
+      </div>
+
+      <div class="plan-card plan-card--featured">
+        <img class="plan-card__img" src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80" alt="SUV">
+        <div class="plan-card__body">
+          <div class="plan-card__type">SUV</div>
+          <div class="plan-card__price">₦40,000,000</div>
+          <ul class="plan-card__features">
+            <li>48 Monthly Installments</li>
+            <li>3-Year Warranty</li>
+            <li>Roadside Assistance Included</li>
+          </ul>
+          <a href="book-appointment.html" class="btn btn--primary">Choose SUV Plan</a>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <img class="plan-card__img" src="https://images.unsplash.com/photo-1619767886558-efdc39465ef9?auto=format&fit=crop&w=800&q=80" alt="Sports Car">
+        <div class="plan-card__body">
+          <div class="plan-card__type">SPORTS CAR</div>
+          <div class="plan-card__price">₦80,000,000</div>
+          <ul class="plan-card__features">
+            <li>60 Monthly Installments</li>
+            <li>5-Year Warranty</li>
+            <li>Free Insurance — 2 Years</li>
+          </ul>
+          <a href="book-appointment.html" class="btn btn--outline">Choose Sports Plan</a>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <img class="plan-card__img" src="https://images.unsplash.com/photo-1614270534796-d87a4224aa77?auto=format&fit=crop&w=800&q=80" alt="Truck">
+        <div class="plan-card__body">
+          <div class="plan-card__type">TRUCK</div>
+          <div class="plan-card__price">₦55,000,000</div>
+          <ul class="plan-card__features">
+            <li>48 Monthly Installments</li>
+            <li>Heavy-Duty Maintenance Package</li>
+            <li>3-Year Warranty</li>
+          </ul>
+          <a href="book-appointment.html" class="btn btn--outline">Choose Truck Plan</a>
+        </div>
+      </div>
+
+      <div class="plan-card">
+        <img class="plan-card__img" src="https://images.unsplash.com/photo-1606664478212-6e5a1a3f07aa?auto=format&fit=crop&w=800&q=80" alt="Electric Car">
+        <div class="plan-card__body">
+          <div class="plan-card__type">ELECTRIC CAR</div>
+          <div class="plan-card__price">₦35,000,000</div>
+          <ul class="plan-card__features">
+            <li>36 Monthly Installments</li>
+            <li>Free Charging Station</li>
+            <li>3-Year Battery Warranty</li>
+          </ul>
+          <a href="book-appointment.html" class="btn btn--outline">Choose Electric Plan</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer__brand">AUTO<span style="color:var(--color-text)">DRIVE</span></div>
+    <div class="footer__links">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="payment-schemes.html">Payment Schemes</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="book-appointment.html">Book Appointment</a>
+      <a href="account.html">Account</a>
+    </div>
+    <p class="footer__copy">&copy; 2026 AutoDrive Motors. All rights reserved. Template by Favex.</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
