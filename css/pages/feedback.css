@@ -1,0 +1,83 @@
+/* ============================================
+   FEEDBACK PAGE
+   ============================================ */
+.feedback-wrapper {
+  max-width: 580px;
+  margin: 0 auto;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 44px;
+}
+
+.feedback-wrapper h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.feedback-wrapper > p {
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  margin-bottom: 30px;
+}
+
+/* Star Rating — now a <fieldset> so screen readers announce the group */
+.star-group {
+  border: none;
+  padding: 0;
+  margin: 0 0 24px;
+}
+
+.star-group legend {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--color-muted);
+  margin-bottom: 10px;
+}
+
+.stars {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+/* Visually hidden, but still focusable with the keyboard
+   (display:none removed the radios from keyboard navigation) */
+.stars input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.stars label {
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-border);
+  cursor: pointer;
+  transition: color var(--transition), transform var(--transition);
+}
+
+.stars input:checked ~ label,
+.stars label:hover,
+.stars label:hover ~ label {
+  color: var(--color-accent);
+  transform: scale(1.1);
+}
+
+.stars input:focus-visible + label {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (max-width: 560px) {
+  .feedback-wrapper { padding: 24px; }
+}

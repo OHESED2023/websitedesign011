@@ -3,211 +3,126 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A glimpse into the AutoDrive Motors fleet and showroom: sports cars, sedans, SUVs, trucks and electric vehicles." />
+  <meta name="theme-color" content="#0d0d0d" />
   <title>Gallery — AutoDrive Motors</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" />
   <link rel="stylesheet" href="../css/style.css" />
-  <style>
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-    }
-
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--color-border);
-      cursor: pointer;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.06);
-    }
-
-    .gallery-item__overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
-      opacity: 0;
-      transition: opacity var(--transition);
-      display: flex;
-      align-items: flex-end;
-      padding: 16px;
-    }
-
-    .gallery-item:hover .gallery-item__overlay {
-      opacity: 1;
-    }
-
-    .gallery-item__label {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      letter-spacing: 1.5px;
-      color: var(--color-text);
-    }
-
-    /* Lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.92);
-      z-index: 9000;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lightbox.open {
-      display: flex;
-    }
-
-    .lightbox img {
-      max-width: 90vw;
-      max-height: 85vh;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--color-border);
-    }
-
-    .lightbox__close {
-      position: absolute;
-      top: 20px;
-      right: 28px;
-      font-size: 2rem;
-      color: var(--color-text);
-      cursor: pointer;
-      line-height: 1;
-      transition: color var(--transition);
-    }
-
-    .lightbox__close:hover {
-      color: var(--color-accent);
-    }
-  </style>
+  <link rel="stylesheet" href="../css/pages/gallery.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <nav class="navbar">
-    <a href="../index.html" class="navbar__brand">AUTO<span>DRIVE</span></a>
-    <div class="navbar__toggle"><span></span><span></span><span></span></div>
-    <div class="navbar__links">
-      <a href="../index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="products.html">Products</a>
-      <a href="payment-schemes.html">Payment Schemes</a>
-      <a href="gallery.html" class="active">Gallery</a>
-      <a href="contact.html">Contact</a>
-      <a href="feedback.html">Feedback</a>
-      <a href="account.html" class="navbar__cta">My Account</a>
-      <a href="book-appointment.html" class="btn btn--primary" style="width:auto;padding:8px 16px;">Book Now</a>
+  <header>
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="../index.html" class="navbar__brand">AUTO<span>DRIVE</span></a>
+      <button type="button" class="navbar__toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="navbar__links" id="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="payment-schemes.html">Payment Schemes</a>
+        <a href="gallery.html" class="active" aria-current="page">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="account.html" class="navbar__cta">My Account</a>
+        <a href="book-appointment.html" class="btn btn--primary btn--nav">Book Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="page-hero">
+      <p class="page-hero__label">Visual Showcase</p>
+      <h1 class="page-hero__title">GALLERY</h1>
+      <p class="page-hero__sub">A glimpse into our fleet and showroom.</p>
     </div>
-  </nav>
 
-  <div class="page-hero">
-    <p class="page-hero__label">Visual Showcase</p>
-    <h1 class="page-hero__title">GALLERY</h1>
-    <p class="page-hero__sub">A glimpse into our fleet and showroom.</p>
-  </div>
+    <div class="main-content">
+      <div class="gallery-grid" id="gallery">
 
-  <div class="main-content">
-    <div class="gallery-grid" id="gallery">
+      <button type="button" class="gallery-item" data-src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" data-alt="Sports car, front view">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Sports car, front view" width="600" height="240" loading="lazy">
+        <span class="gallery-item__overlay" aria-hidden="true"><span class="gallery-item__label">SPORTS CAR</span></span>
+      </button>
 
-      <div class="gallery-item" data-src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80">
-        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="Sports Car Front">
-        <div class="gallery-item__overlay"><span class="gallery-item__label">SPORTS CAR</span></div>
+      <button type="button" class="gallery-item" data-src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" data-alt="Luxury car interior">
+        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Luxury car interior" width="600" height="240" loading="lazy">
+        <span class="gallery-item__overlay" aria-hidden="true"><span class="gallery-item__label">LUXURY INTERIOR</span></span>
+      </button>
+
+      <button type="button" class="gallery-item" data-src="https://images.unsplash.com/photo-1618907795291-22fb5a33f9c2?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" data-alt="Sedan">
+        <img src="https://images.unsplash.com/photo-1618907795291-22fb5a33f9c2?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Sedan" width="600" height="240" loading="lazy">
+        <span class="gallery-item__overlay" aria-hidden="true"><span class="gallery-item__label">SEDAN</span></span>
+      </button>
+
+      <button type="button" class="gallery-item" data-src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" data-alt="SUV">
+        <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="SUV" width="600" height="240" loading="lazy">
+        <span class="gallery-item__overlay" aria-hidden="true"><span class="gallery-item__label">SUV</span></span>
+      </button>
+
+      <button type="button" class="gallery-item" data-src="https://images.unsplash.com/photo-1619767886558-efdc39465ef9?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" data-alt="Sports GT car">
+        <img src="https://images.unsplash.com/photo-1619767886558-efdc39465ef9?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Sports GT car" width="600" height="240" loading="lazy">
+        <span class="gallery-item__overlay" aria-hidden="true"><span class="gallery-item__label">SPORTS GT</span></span>
+      </button>
+
+      <button type="button" class="gallery-item" data-src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" data-alt="The AutoDrive Motors showroom">
+        <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="The AutoDrive Motors showroom" width="600" height="240" loading="lazy">
+        <span class="gallery-item__overlay" aria-hidden="true"><span class="gallery-item__label">OUR SHOWROOM</span></span>
+      </button>
+
+      <button type="button" class="gallery-item" data-src="https://images.unsplash.com/photo-1614270534796-d87a4224aa77?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" data-alt="Heavy-duty truck">
+        <img src="https://images.unsplash.com/photo-1614270534796-d87a4224aa77?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Heavy-duty truck" width="600" height="240" loading="lazy">
+        <span class="gallery-item__overlay" aria-hidden="true"><span class="gallery-item__label">TRUCK</span></span>
+      </button>
+
+      <button type="button" class="gallery-item" data-src="https://images.unsplash.com/photo-1606664478212-6e5a1a3f07aa?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" data-alt="Electric car">
+        <img src="https://images.unsplash.com/photo-1606664478212-6e5a1a3f07aa?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Electric car" width="600" height="240" loading="lazy">
+        <span class="gallery-item__overlay" aria-hidden="true"><span class="gallery-item__label">ELECTRIC</span></span>
+      </button>
+
+      <button type="button" class="gallery-item" data-src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" data-alt="Luxury sedan">
+        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Luxury sedan" width="600" height="240" loading="lazy">
+        <span class="gallery-item__overlay" aria-hidden="true"><span class="gallery-item__label">LUXURY SEDAN</span></span>
+      </button>
+
+      <button type="button" class="gallery-item" data-src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" data-alt="Classic car">
+        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Classic car" width="600" height="240" loading="lazy">
+        <span class="gallery-item__overlay" aria-hidden="true"><span class="gallery-item__label">CLASSIC</span></span>
+      </button>
+
       </div>
-
-      <div class="gallery-item" data-src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1200&q=80">
-        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80" alt="Luxury Interior">
-        <div class="gallery-item__overlay"><span class="gallery-item__label">LUXURY INTERIOR</span></div>
-      </div>
-
-      <div class="gallery-item" data-src="https://images.unsplash.com/photo-1618907795291-22fb5a33f9c2?auto=format&fit=crop&w=1200&q=80">
-        <img src="https://images.unsplash.com/photo-1618907795291-22fb5a33f9c2?auto=format&fit=crop&w=600&q=80" alt="Sedan">
-        <div class="gallery-item__overlay"><span class="gallery-item__label">SEDAN</span></div>
-      </div>
-
-      <div class="gallery-item" data-src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1200&q=80">
-        <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=600&q=80" alt="SUV">
-        <div class="gallery-item__overlay"><span class="gallery-item__label">SUV</span></div>
-      </div>
-
-      <div class="gallery-item" data-src="https://images.unsplash.com/photo-1619767886558-efdc39465ef9?auto=format&fit=crop&w=1200&q=80">
-        <img src="https://images.unsplash.com/photo-1619767886558-efdc39465ef9?auto=format&fit=crop&w=600&q=80" alt="Sports Car">
-        <div class="gallery-item__overlay"><span class="gallery-item__label">SPORTS GT</span></div>
-      </div>
-
-      <div class="gallery-item" data-src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1200&q=80">
-        <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=600&q=80" alt="Showroom">
-        <div class="gallery-item__overlay"><span class="gallery-item__label">OUR SHOWROOM</span></div>
-      </div>
-
-      <div class="gallery-item" data-src="https://images.unsplash.com/photo-1614270534796-d87a4224aa77?auto=format&fit=crop&w=1200&q=80">
-        <img src="https://images.unsplash.com/photo-1614270534796-d87a4224aa77?auto=format&fit=crop&w=600&q=80" alt="Truck">
-        <div class="gallery-item__overlay"><span class="gallery-item__label">TRUCK</span></div>
-      </div>
-
-      <div class="gallery-item" data-src="https://images.unsplash.com/photo-1606664478212-6e5a1a3f07aa?auto=format&fit=crop&w=1200&q=80">
-        <img src="https://images.unsplash.com/photo-1606664478212-6e5a1a3f07aa?auto=format&fit=crop&w=600&q=80" alt="Electric Car">
-        <div class="gallery-item__overlay"><span class="gallery-item__label">ELECTRIC</span></div>
-      </div>
-
-      <div class="gallery-item" data-src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=80">
-        <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=600&q=80" alt="Luxury Sedan">
-        <div class="gallery-item__overlay"><span class="gallery-item__label">LUXURY SEDAN</span></div>
-      </div>
-
-      <div class="gallery-item" data-src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80">
-        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=600&q=80" alt="Classic Car">
-        <div class="gallery-item__overlay"><span class="gallery-item__label">CLASSIC</span></div>
-      </div>
-
     </div>
-  </div>
+  </main>
 
   <!-- Lightbox -->
-  <div class="lightbox" id="lightbox">
-    <span class="lightbox__close" id="lightboxClose">&times;</span>
-    <img id="lightboxImg" src="" alt="Gallery Large View" />
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button type="button" class="lightbox__close" id="lightboxClose" aria-label="Close image viewer">&times;</button>
+    <img id="lightboxImg" alt="" />
   </div>
 
   <footer class="footer">
-    <div class="footer__brand">AUTO<span style="color:var(--color-text)">DRIVE</span></div>
-    <div class="footer__links">
-      <a href="../index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="products.html">Products</a>
-      <a href="payment-schemes.html">Payment Schemes</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-      <a href="book-appointment.html">Book Appointment</a>
-      <a href="account.html">Account</a>
-    </div>
+    <div class="footer__brand">AUTO<span>DRIVE</span></div>
+    <nav class="footer__links" aria-label="Footer navigation">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="payment-schemes.html">Payment Schemes</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="book-appointment.html">Book Appointment</a>
+        <a href="account.html">Account</a>
+    </nav>
     <p class="footer__copy">&copy; 2026 AutoDrive Motors. All rights reserved. Template by Favex.</p>
   </footer>
 
   <script src="../js/main.js"></script>
-  <script>
-    const lightbox     = document.getElementById('lightbox');
-    const lightboxImg  = document.getElementById('lightboxImg');
-    const lightboxClose= document.getElementById('lightboxClose');
-
-    document.querySelectorAll('.gallery-item').forEach(item => {
-      item.addEventListener('click', () => {
-        lightboxImg.src = item.dataset.src;
-        lightbox.classList.add('open');
-      });
-    });
-
-    lightboxClose.addEventListener('click', () => lightbox.classList.remove('open'));
-    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
-  </script>
+  <script src="../js/pages/gallery.js"></script>
 </body>
 </html>

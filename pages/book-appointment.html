@@ -3,141 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Reserve a test drive or purchase consultation at AutoDrive Motors. Pick your vehicle, date and time." />
+  <meta name="theme-color" content="#0d0d0d" />
   <title>Book Appointment — AutoDrive Motors</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" />
   <link rel="stylesheet" href="../css/style.css" />
-  <style>
-    .booking-wrapper {
-      max-width: 640px;
-      margin: 0 auto;
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      padding: 44px;
-    }
-
-    .booking-wrapper h2 {
-      font-family: var(--font-display);
-      font-size: 2rem;
-      letter-spacing: 2px;
-      margin-bottom: 8px;
-    }
-
-    .booking-wrapper > p {
-      color: var(--color-muted);
-      font-size: 0.92rem;
-      margin-bottom: 30px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    @media (max-width: 560px) {
-      .booking-wrapper { padding: 24px; }
-      .form-row { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="../css/pages/book-appointment.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <nav class="navbar">
-    <a href="../index.html" class="navbar__brand">AUTO<span>DRIVE</span></a>
-    <div class="navbar__toggle"><span></span><span></span><span></span></div>
-    <div class="navbar__links">
-      <a href="../index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="products.html">Products</a>
-      <a href="payment-schemes.html">Payment Schemes</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-      <a href="feedback.html">Feedback</a>
-      <a href="account.html" class="navbar__cta">My Account</a>
-      <a href="book-appointment.html" class="btn btn--primary active" style="width:auto;padding:8px 16px;">Book Now</a>
+  <header>
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="../index.html" class="navbar__brand">AUTO<span>DRIVE</span></a>
+      <button type="button" class="navbar__toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="navbar__links" id="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="payment-schemes.html">Payment Schemes</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="account.html" class="navbar__cta">My Account</a>
+        <a href="book-appointment.html" class="btn btn--primary btn--nav active" aria-current="page">Book Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="page-hero">
+      <p class="page-hero__label">Schedule a Visit</p>
+      <h1 class="page-hero__title">BOOK APPOINTMENT</h1>
+      <p class="page-hero__sub">Reserve your preferred slot for a test drive or purchase consultation.</p>
     </div>
-  </nav>
 
-  <div class="page-hero">
-    <p class="page-hero__label">Schedule a Visit</p>
-    <h1 class="page-hero__title">BOOK APPOINTMENT</h1>
-    <p class="page-hero__sub">Reserve your preferred slot for a test drive or purchase consultation.</p>
-  </div>
+    <div class="main-content">
+      <div class="booking-wrapper">
+        <h2>YOUR DETAILS</h2>
+        <p>Fill in your information below and we'll confirm your appointment within 24 hours.</p>
 
-  <div class="main-content">
-    <div class="booking-wrapper">
-      <h2>YOUR DETAILS</h2>
-      <p>Fill in your information below and we'll confirm your appointment within 24 hours.</p>
-
-      <form>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="fullname">Full Name</label>
-            <input type="text" id="fullname" placeholder="John Doe" required />
+        <form data-form data-success="Thank you! We've received your booking request and will confirm within 24 hours.">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullname">Full Name</label>
+              <input type="text" id="fullname" name="fullname" placeholder="John Doe" autocomplete="name" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+234 800 000 0000" autocomplete="tel" required />
+            </div>
           </div>
+
           <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" placeholder="+234 800 000 0000" required />
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" required />
           </div>
-        </div>
 
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" placeholder="your@email.com" required />
-        </div>
-
-        <div class="form-group">
-          <label for="car">Select Vehicle of Interest</label>
-          <select id="car" required>
-            <option value="">— Choose a vehicle —</option>
-            <option value="Toyota">Toyota</option>
-            <option value="Honda">Honda</option>
-            <option value="Mercedes">Mercedes-Benz</option>
-            <option value="BMW">BMW</option>
-            <option value="Tesla">Tesla</option>
-            <option value="Hyundai">Hyundai</option>
-            <option value="Audi">Audi</option>
-            <option value="Bentley">Bentley</option>
-            <option value="Others">Other / Not Sure Yet</option>
-          </select>
-        </div>
-
-        <div class="form-row">
           <div class="form-group">
-            <label for="date">Preferred Date</label>
-            <input type="date" id="date" required />
+            <label for="vehicle">Select Vehicle of Interest</label>
+            <select id="vehicle" name="vehicle" required>
+              <option value="">— Choose a vehicle —</option>
+              <option value="city-cruiser-s3">City Cruiser S3 — Sedan</option>
+              <option value="titan-x-pro">Titan X Pro — SUV</option>
+              <option value="venom-gt-r">Venom GT-R — Sports</option>
+              <option value="iron-bull-4x4">Iron Bull 4X4 — Truck</option>
+              <option value="volt-ev-500">Volt EV 500 — Electric</option>
+              <option value="prestige-l7">Prestige L7 — Luxury Sedan</option>
+              <option value="not-sure">Other / Not sure yet</option>
+            </select>
           </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">Preferred Date</label>
+              <input type="date" id="date" name="date" required />
+            </div>
+            <div class="form-group">
+              <label for="time">Preferred Time</label>
+              <input type="time" id="time" name="time" aria-describedby="time-hint" required />
+              <span class="form-hint" id="time-hint">Mon–Sat: 8am–6pm · Sunday: 10am–3pm</span>
+            </div>
+          </div>
+
           <div class="form-group">
-            <label for="time">Preferred Time</label>
-            <input type="time" id="time" required />
+            <label for="notes">Additional Notes</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Any specific requests or questions..."></textarea>
           </div>
-        </div>
 
-        <div class="form-group">
-          <label for="notes">Additional Notes</label>
-          <textarea id="notes" rows="4" placeholder="Any specific requests or questions..."></textarea>
-        </div>
-
-        <button type="submit" class="btn btn--primary">Confirm Booking</button>
-      </form>
+          <button type="submit" class="btn btn--primary">Confirm Booking</button>
+        </form>
+      </div>
     </div>
-  </div>
+  </main>
 
   <footer class="footer">
-    <div class="footer__brand">AUTO<span style="color:var(--color-text)">DRIVE</span></div>
-    <div class="footer__links">
-      <a href="../index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="products.html">Products</a>
-      <a href="payment-schemes.html">Payment Schemes</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-      <a href="book-appointment.html">Book Appointment</a>
-      <a href="account.html">Account</a>
-    </div>
+    <div class="footer__brand">AUTO<span>DRIVE</span></div>
+    <nav class="footer__links" aria-label="Footer navigation">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="payment-schemes.html">Payment Schemes</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="book-appointment.html">Book Appointment</a>
+        <a href="account.html">Account</a>
+    </nav>
     <p class="footer__copy">&copy; 2026 AutoDrive Motors. All rights reserved. Template by Favex.</p>
   </footer>
 
   <script src="../js/main.js"></script>
+  <script src="../js/forms.js"></script>
+  <script src="../js/pages/book-appointment.js"></script>
 </body>
 </html>

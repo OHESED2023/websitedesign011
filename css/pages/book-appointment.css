@@ -1,0 +1,42 @@
+/* ============================================
+   BOOK APPOINTMENT PAGE
+   ============================================ */
+.booking-wrapper {
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 44px;
+}
+
+.booking-wrapper h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.booking-wrapper > p {
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  margin-bottom: 30px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.78rem;
+  color: var(--color-muted);
+}
+
+@media (max-width: 560px) {
+  .booking-wrapper { padding: 24px; }
+  .form-row { grid-template-columns: 1fr; }
+}

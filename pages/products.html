@@ -3,190 +3,167 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Products — AutoDrive Motors</title>
+  <meta name="description" content="Browse AutoDrive Motors' range of sedans, SUVs, sports cars, trucks and electric vehicles. Find the perfect car for your lifestyle and budget." />
+  <meta name="theme-color" content="#0d0d0d" />
+  <title>Our Vehicles — AutoDrive Motors</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" />
   <link rel="stylesheet" href="../css/style.css" />
-  <style>
-    /* Filter bar */
-    .filter-bar {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-      justify-content: center;
-    }
-
-    .filter-btn {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      color: var(--color-muted);
-      padding: 8px 20px;
-      border-radius: 100px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all var(--transition);
-      font-family: var(--font-body);
-    }
-
-    .filter-btn:hover,
-    .filter-btn.active {
-      background: var(--color-accent);
-      color: #0d0d0d;
-      border-color: var(--color-accent);
-    }
-  </style>
+  <link rel="stylesheet" href="../css/pages/products.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <nav class="navbar">
-    <a href="../index.html" class="navbar__brand">AUTO<span>DRIVE</span></a>
-    <div class="navbar__toggle"><span></span><span></span><span></span></div>
-    <div class="navbar__links">
-      <a href="../index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="products.html" class="active">Products</a>
-      <a href="payment-schemes.html">Payment Schemes</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-      <a href="feedback.html">Feedback</a>
-      <a href="account.html" class="navbar__cta">My Account</a>
-      <a href="book-appointment.html" class="btn btn--primary" style="width:auto;padding:8px 16px;">Book Now</a>
-    </div>
-  </nav>
+  <header>
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="../index.html" class="navbar__brand">AUTO<span>DRIVE</span></a>
+      <button type="button" class="navbar__toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="navbar__links" id="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html" class="active" aria-current="page">Products</a>
+        <a href="payment-schemes.html">Payment Schemes</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="account.html" class="navbar__cta">My Account</a>
+        <a href="book-appointment.html" class="btn btn--primary btn--nav">Book Now</a>
+      </div>
+    </nav>
+  </header>
 
-  <div class="page-hero">
-    <p class="page-hero__label">Our Inventory</p>
-    <h1 class="page-hero__title">OUR VEHICLES</h1>
-    <p class="page-hero__sub">Find the perfect car for your lifestyle and budget.</p>
-  </div>
-
-  <div class="main-content">
-    <!-- Filter -->
-    <div class="filter-bar">
-      <button class="filter-btn active">All</button>
-      <button class="filter-btn">Sedan</button>
-      <button class="filter-btn">SUV</button>
-      <button class="filter-btn">Sports</button>
-      <button class="filter-btn">Truck</button>
-      <button class="filter-btn">Electric</button>
+  <main id="main">
+    <div class="page-hero">
+      <p class="page-hero__label">Our Inventory</p>
+      <h1 class="page-hero__title">OUR VEHICLES</h1>
+      <p class="page-hero__sub">Find the perfect car for your lifestyle and budget.</p>
     </div>
 
-    <!-- Products Grid -->
-    <div class="grid-3">
-
-      <div class="card">
-        <img class="card__img" src="https://images.unsplash.com/photo-1618907795291-22fb5a33f9c2?auto=format&fit=crop&w=800&q=80" alt="Sedan">
-        <div class="card__body">
-          <span class="badge">Sedan</span>
-          <h3 class="card__title" style="margin-top:10px">CITY CRUISER S3</h3>
-          <p class="card__desc">Luxury and comfort with top-notch performance. Ideal for city driving.</p>
-          <p class="card__price">₦25,000,000</p>
-          <div style="display:flex;gap:8px;">
-            <a href="book-appointment.html" class="btn btn--primary">Book Now</a>
-            <a href="payment-schemes.html" class="btn btn--outline">View Plan</a>
-          </div>
-        </div>
+    <div class="main-content">
+      <!-- Filter -->
+      <div class="filter-bar" role="group" aria-label="Filter vehicles by type">
+        <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter-btn" data-filter="sedan" aria-pressed="false">Sedan</button>
+        <button type="button" class="filter-btn" data-filter="suv" aria-pressed="false">SUV</button>
+        <button type="button" class="filter-btn" data-filter="sports" aria-pressed="false">Sports</button>
+        <button type="button" class="filter-btn" data-filter="truck" aria-pressed="false">Truck</button>
+        <button type="button" class="filter-btn" data-filter="electric" aria-pressed="false">Electric</button>
       </div>
+      <p class="sr-only" id="filter-status" aria-live="polite"></p>
 
-      <div class="card">
-        <img class="card__img" src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80" alt="SUV">
-        <div class="card__body">
-          <span class="badge">SUV</span>
-          <h3 class="card__title" style="margin-top:10px">TITAN X PRO</h3>
-          <p class="card__desc">Commanding presence, built for adventure and long family journeys.</p>
-          <p class="card__price">₦40,000,000</p>
-          <div style="display:flex;gap:8px;">
-            <a href="book-appointment.html" class="btn btn--primary">Book Now</a>
-            <a href="payment-schemes.html" class="btn btn--outline">View Plan</a>
+      <!-- Products Grid -->
+      <h2 class="sr-only">Available vehicles</h2>
+      <div class="grid-3">
+
+        <article class="card" data-category="sedan">
+          <img class="card__img" src="https://images.unsplash.com/photo-1618907795291-22fb5a33f9c2?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="City Cruiser S3 sedan" width="800" height="200" loading="lazy">
+          <div class="card__body">
+            <span class="badge">Sedan</span>
+            <h3 class="card__title">CITY CRUISER S3</h3>
+            <p class="card__desc">Luxury and comfort with top-notch performance. Ideal for city driving.</p>
+            <p class="card__price">₦25,000,000</p>
+            <div class="card__actions">
+              <a href="book-appointment.html?vehicle=city-cruiser-s3" class="btn btn--primary">Book Now</a>
+              <a href="payment-schemes.html#plan-sedan" class="btn btn--outline">View Plan</a>
+            </div>
           </div>
-        </div>
-      </div>
+        </article>
 
-      <div class="card">
-        <img class="card__img" src="https://images.unsplash.com/photo-1619767886558-efdc39465ef9?auto=format&fit=crop&w=800&q=80" alt="Sports Car">
-        <div class="card__body">
-          <span class="badge">Sports</span>
-          <h3 class="card__title" style="margin-top:10px">VENOM GT-R</h3>
-          <p class="card__desc">Pure adrenaline. Zero compromises. Engineered for the open road.</p>
-          <p class="card__price">₦80,000,000</p>
-          <div style="display:flex;gap:8px;">
-            <a href="book-appointment.html" class="btn btn--primary">Book Now</a>
-            <a href="payment-schemes.html" class="btn btn--outline">View Plan</a>
+        <article class="card" data-category="suv">
+          <img class="card__img" src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Titan X Pro suv" width="800" height="200" loading="lazy">
+          <div class="card__body">
+            <span class="badge">SUV</span>
+            <h3 class="card__title">TITAN X PRO</h3>
+            <p class="card__desc">Commanding presence, built for adventure and long family journeys.</p>
+            <p class="card__price">₦40,000,000</p>
+            <div class="card__actions">
+              <a href="book-appointment.html?vehicle=titan-x-pro" class="btn btn--primary">Book Now</a>
+              <a href="payment-schemes.html#plan-suv" class="btn btn--outline">View Plan</a>
+            </div>
           </div>
-        </div>
-      </div>
+        </article>
 
-      <div class="card">
-        <img class="card__img" src="https://images.unsplash.com/photo-1614270534796-d87a4224aa77?auto=format&fit=crop&w=800&q=80" alt="Truck">
-        <div class="card__body">
-          <span class="badge">Truck</span>
-          <h3 class="card__title" style="margin-top:10px">IRON BULL 4X4</h3>
-          <p class="card__desc">Built for heavy-duty use. Commercial or personal, it handles both.</p>
-          <p class="card__price">₦55,000,000</p>
-          <div style="display:flex;gap:8px;">
-            <a href="book-appointment.html" class="btn btn--primary">Book Now</a>
-            <a href="payment-schemes.html" class="btn btn--outline">View Plan</a>
+        <article class="card" data-category="sports">
+          <img class="card__img" src="https://images.unsplash.com/photo-1619767886558-efdc39465ef9?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Venom Gt-R sports" width="800" height="200" loading="lazy">
+          <div class="card__body">
+            <span class="badge">Sports</span>
+            <h3 class="card__title">VENOM GT-R</h3>
+            <p class="card__desc">Pure adrenaline. Zero compromises. Engineered for the open road.</p>
+            <p class="card__price">₦80,000,000</p>
+            <div class="card__actions">
+              <a href="book-appointment.html?vehicle=venom-gt-r" class="btn btn--primary">Book Now</a>
+              <a href="payment-schemes.html#plan-sports" class="btn btn--outline">View Plan</a>
+            </div>
           </div>
-        </div>
-      </div>
+        </article>
 
-      <div class="card">
-        <img class="card__img" src="https://images.unsplash.com/photo-1606664478212-6e5a1a3f07aa?auto=format&fit=crop&w=800&q=80" alt="Electric Car">
-        <div class="card__body">
-          <span class="badge">Electric</span>
-          <h3 class="card__title" style="margin-top:10px">VOLT EV 500</h3>
-          <p class="card__desc">Zero emissions, full power. Includes free home charging station.</p>
-          <p class="card__price">₦35,000,000</p>
-          <div style="display:flex;gap:8px;">
-            <a href="book-appointment.html" class="btn btn--primary">Book Now</a>
-            <a href="payment-schemes.html" class="btn btn--outline">View Plan</a>
+        <article class="card" data-category="truck">
+          <img class="card__img" src="https://images.unsplash.com/photo-1614270534796-d87a4224aa77?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Iron Bull 4X4 truck" width="800" height="200" loading="lazy">
+          <div class="card__body">
+            <span class="badge">Truck</span>
+            <h3 class="card__title">IRON BULL 4X4</h3>
+            <p class="card__desc">Built for heavy-duty use. Commercial or personal, it handles both.</p>
+            <p class="card__price">₦55,000,000</p>
+            <div class="card__actions">
+              <a href="book-appointment.html?vehicle=iron-bull-4x4" class="btn btn--primary">Book Now</a>
+              <a href="payment-schemes.html#plan-truck" class="btn btn--outline">View Plan</a>
+            </div>
           </div>
-        </div>
-      </div>
+        </article>
 
-      <div class="card">
-        <img class="card__img" src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=800&q=80" alt="Luxury Sedan">
-        <div class="card__body">
-          <span class="badge">Sedan</span>
-          <h3 class="card__title" style="margin-top:10px">PRESTIGE L7</h3>
-          <p class="card__desc">Executive comfort meets refined performance. The ultimate business car.</p>
-          <p class="card__price">₦65,000,000</p>
-          <div style="display:flex;gap:8px;">
-            <a href="book-appointment.html" class="btn btn--primary">Book Now</a>
-            <a href="payment-schemes.html" class="btn btn--outline">View Plan</a>
+        <article class="card" data-category="electric">
+          <img class="card__img" src="https://images.unsplash.com/photo-1606664478212-6e5a1a3f07aa?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Volt Ev 500 electric" width="800" height="200" loading="lazy">
+          <div class="card__body">
+            <span class="badge">Electric</span>
+            <h3 class="card__title">VOLT EV 500</h3>
+            <p class="card__desc">Zero emissions, full power. Includes free home charging station.</p>
+            <p class="card__price">₦35,000,000</p>
+            <div class="card__actions">
+              <a href="book-appointment.html?vehicle=volt-ev-500" class="btn btn--primary">Book Now</a>
+              <a href="payment-schemes.html#plan-electric" class="btn btn--outline">View Plan</a>
+            </div>
           </div>
-        </div>
-      </div>
+        </article>
 
+        <article class="card" data-category="sedan">
+          <img class="card__img" src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Prestige L7 sedan" width="800" height="200" loading="lazy">
+          <div class="card__body">
+            <span class="badge">Sedan</span>
+            <h3 class="card__title">PRESTIGE L7</h3>
+            <p class="card__desc">Executive comfort meets refined performance. The ultimate business car.</p>
+            <p class="card__price">₦65,000,000</p>
+            <div class="card__actions">
+              <a href="book-appointment.html?vehicle=prestige-l7" class="btn btn--primary">Book Now</a>
+              <a href="contact.html" class="btn btn--outline">Ask About Plan</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
     </div>
-  </div>
+  </main>
 
   <footer class="footer">
-    <div class="footer__brand">AUTO<span style="color:var(--color-text)">DRIVE</span></div>
-    <div class="footer__links">
-      <a href="../index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="products.html">Products</a>
-      <a href="payment-schemes.html">Payment Schemes</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-      <a href="book-appointment.html">Book Appointment</a>
-      <a href="account.html">Account</a>
-    </div>
+    <div class="footer__brand">AUTO<span>DRIVE</span></div>
+    <nav class="footer__links" aria-label="Footer navigation">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="payment-schemes.html">Payment Schemes</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="book-appointment.html">Book Appointment</a>
+        <a href="account.html">Account</a>
+    </nav>
     <p class="footer__copy">&copy; 2026 AutoDrive Motors. All rights reserved. Template by Favex.</p>
   </footer>
 
   <script src="../js/main.js"></script>
-  <script>
-    // Filter buttons (UI only — wire to backend or JS filter as needed)
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-      });
-    });
-  </script>
+  <script src="../js/pages/products.js"></script>
 </body>
 </html>
